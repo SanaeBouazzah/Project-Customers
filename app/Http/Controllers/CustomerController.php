@@ -13,7 +13,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+        $customers=Customer::all();
+        return view('customers.index')->with('customers',$customers);
     }
 
     /**
@@ -21,7 +22,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        return view('customers.create');
     }
 
     /**
@@ -29,7 +30,8 @@ class CustomerController extends Controller
      */
     public function store(StoreCustomerRequest $request)
     {
-        //
+        Customer::create($request->validated());
+        return back()->with('success','Customer Added Succesfully');
     }
 
     /**
@@ -37,7 +39,7 @@ class CustomerController extends Controller
      */
     public function show(Customer $customer)
     {
-        //
+        return view('customers.show')->with('customer',$customer);
     }
 
     /**
@@ -45,7 +47,8 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
-        //
+        return view('customers.edit')->with('customer',$customer);
+
     }
 
     /**
@@ -53,7 +56,9 @@ class CustomerController extends Controller
      */
     public function update(UpdateCustomerRequest $request, Customer $customer)
     {
-        //
+        
+        $customer->update($request->validated());
+        return back()->with('success','Customer Edited Succesfully');
     }
 
     /**
@@ -61,6 +66,7 @@ class CustomerController extends Controller
      */
     public function destroy(Customer $customer)
     {
-        //
+        $customer->delete();
+        return back()->with('success','Customer Deleted Succesfully');
     }
 }
