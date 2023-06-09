@@ -19,5 +19,6 @@
             </div>
         </div>
     </div>
+    <a href="{{route('customers')}}">Click Here</a>
 </div>
 @endsection
