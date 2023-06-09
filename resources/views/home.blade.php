@@ -19,6 +19,8 @@
             </div>
         </div>
     </div>
-    
+    <div class="row justify-content-center">
+      <a href="{{route('customers.index')}}">Click Here</a>
+    </div>
 </div>
 @endsection
