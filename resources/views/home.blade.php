@@ -20,7 +20,11 @@
         </div>
     </div>
     <div class="row justify-content-center">
-      <a href="{{route('customers.index')}}">Click Here</a>
+      <div class="col-md-8">
+        <div class="card">
+          <a href="{{route('customers.index')}}">Click Here</a>
+        </div>
+      </div>  
     </div>
 </div>
 @endsection
