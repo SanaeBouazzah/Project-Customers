@@ -16,7 +16,7 @@
 
                     {{ __('You are logged in!') }}
                 </div>
-                <div class="card-header"><a href="{{route('customers.index')}}">Click Here</a></div>
+                <div class="card-header"><a href="{{route('customers.index')}}" class="btn btn-success px-5 my-3">Click Here</a></div>
             </div>
         </div>
     </div>
