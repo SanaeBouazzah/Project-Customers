@@ -36,13 +36,9 @@ class CustomerController extends Controller
         $customer->update($request->validated());
         return redirect()->route('customers.index')->with('success','Customer Edited Succesfully');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Customer $customer)
     {
         $customer->delete();
-        return back()->with('success','Customer Deleted Succesfully');
+        return redirect()->route('customers.index')->with('success','Customer Deleted Succesfully');
     }
 }
