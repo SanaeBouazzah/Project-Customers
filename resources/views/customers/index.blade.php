@@ -3,6 +3,9 @@
 @section('content')
  <div class="container">
     @include('messages')
+    <div>
+      <a href="/customers/create" class="btn btn-success px-5 rounded-0 my-3">Create</a>
+    </div>
  <table class="table">
   <thead>
     <tr>
