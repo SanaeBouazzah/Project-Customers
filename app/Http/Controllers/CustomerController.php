@@ -26,24 +26,15 @@ class CustomerController extends Controller
     {
         return view('customers.show')->with('customer',$customer);
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Customer $customer)
     {
         return view('customers.edit')->with('customer',$customer);
 
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateCustomerRequest $request, Customer $customer)
     {
-        
         $customer->update($request->validated());
-        return back()->with('success','Customer Edited Succesfully');
+        return redirect()->route('customers.index')->with('success','Customer Edited Succesfully');
     }
 
     /**
